@@ -5,18 +5,17 @@ const router  = express.Router();
 /**
  * Edit password information (AJAX)
  *
- * Filter by category (AJAX)
+ * Filter by category (AJAX) XXX frontend
  *
  * Create new password XXX part of new_password route
  *
- * Clipboard API
+ * Clipboard API XXX frontend
  */
 
 
 // GET /passwords
 
-// GET /passwords/:id
-
+// module.exports = router;
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
