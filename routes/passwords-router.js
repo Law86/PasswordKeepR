@@ -12,12 +12,18 @@ const router  = express.Router();
  * Clipboard API
  */
 
+
+// GET /passwords
+
+// GET /passwords/:id
+
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM passwords;`)
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const passwords = data.rows;
+        res.json({ passwords });
       })
       .catch(err => {
         res
