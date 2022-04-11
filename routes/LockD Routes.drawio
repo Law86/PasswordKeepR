@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2022-04-10T01:02:53.142Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" etag="JDYN0yXSiSbLO3rm-xqN" version="17.4.2" type="github">
+  <diagram id="pFCNv6qWyvuNaX6p0-6D" name="Page-1">
+    <mxGraphModel dx="1576" dy="899" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.007;entryY=0.468;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="p9TP2nX3cPYLfcKiRHec-1" target="RI68PjMo5xv4oiC3jsUr-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p9TP2nX3cPYLfcKiRHec-1" value="LockD.com&lt;br&gt;GET /&lt;br&gt;&lt;br&gt;redirect to LOGIN&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="50" y="250" width="270" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RI68PjMo5xv4oiC3jsUr-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1300" y="453" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-3" value="Passwords&lt;br&gt;GET /passwords&lt;br&gt;POST /passwords for editing info" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="896" y="313" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RI68PjMo5xv4oiC3jsUr-4" target="RI68PjMo5xv4oiC3jsUr-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-4" value="Registration&lt;br&gt;GET /register to render page&lt;br&gt;redirect to /passwords&lt;br&gt;&lt;br&gt;add cookie to user" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="480" y="75" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-6" value="Create New Password&lt;br&gt;GET /new_password to render page&lt;br&gt;POST /passwords&lt;br&gt;redirect to /passwords" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="340.5" width="225" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-7" value="Edit Password Info&lt;br&gt;using ajax" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="820" y="703" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-9" value="Ability to Copy to Clipboard" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="1176" y="703" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-10" value="Filter passwords by tag" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="996" y="703" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.56;entryY=-0.04;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="RI68PjMo5xv4oiC3jsUr-12" target="RI68PjMo5xv4oiC3jsUr-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RI68PjMo5xv4oiC3jsUr-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="896" y="693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RI68PjMo5xv4oiC3jsUr-12" target="RI68PjMo5xv4oiC3jsUr-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-12" value="Features&lt;br&gt;/passwords" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1011" y="613" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="RI68PjMo5xv4oiC3jsUr-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="890" y="533" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1KIEcYsJ3rfPeW1MCFRo-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="RI68PjMo5xv4oiC3jsUr-16" target="RI68PjMo5xv4oiC3jsUr-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RI68PjMo5xv4oiC3jsUr-16" value="Login&lt;br&gt;GET /login to render page&lt;br&gt;&lt;br&gt;If valid user, redirect to /passwords&lt;br&gt;Else, user will need to register&lt;br&gt;&lt;br&gt;retrieve user cookie" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="480" y="393" width="280" height="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
