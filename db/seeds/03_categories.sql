@@ -1,0 +1,1 @@
+INSERT INTO categories (password_id, category) VALUES (1, "Social");

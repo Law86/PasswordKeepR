@@ -5,6 +5,6 @@ CREATE TABLE passwords (
   user_id INTEGER REFERENCES users(id) DELETE ON CASCADE,
   category_id INTEGER REFERENCES categories(id) DELETE ON CASCADE,
   password VARCHAR(128),
-  website VARCHAR(255),
-  username VARCHAR(255)
+  website VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL
 );
