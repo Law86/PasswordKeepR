@@ -73,11 +73,34 @@ const handleGeneratePassword = () => {
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  const password = document.getElementById('new-password').innerHTML;
+  let website = document.getElementById('website').value;
+  let username = document.getElementById('username').value;
+  let category = document.getElementById('category').value;
+  let password = document.getElementById('new-password').innerHTML;
+
+  if (!website || !username || !category || !password) {
+    return alert('Please fill all fields');
+  }
+
   const confirmPass = confirm('Happy with this password? '+ password);
   if (!confirmPass) return;
 
-  const body = {password};
+
+  const body = {
+    website,
+    username,
+    category,
+    password
+  };
+
+  $.ajax({
+    method: "POST",
+    url: "/api/passwords",
+    data: body
+  })
+    .done(function( msg ) {
+      console.log( "Data Saved: ", msg);
+    });
 };
 
   // event handler
