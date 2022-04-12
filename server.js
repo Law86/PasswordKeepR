@@ -44,8 +44,8 @@ const newPasswordRoutes = require("./routes/new_password-router");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/passwords", passwordsRoutes(db));
-// app.use("/api/new_password", newPasswordRoutes());
+app.use("api/passwords", passwordsRoutes(db));
+app.use("/new_password", newPasswordRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
