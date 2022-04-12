@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <title>LockD-Vault</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new_password.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/new_password.js"></script>
+</head>
+
+<body>
+
+  <%- include('partials/_header') %>
+
+  <!-- START OF MAIN -->
+  <main>
+    <h2>Register a New Account</h2>
+    <article class=""> <!-- DEFINE CLASS LATER -->
+      <!-- AJAX request to filter page by category -->
+      <form method="POST" action="/passwords" class="new-password__form">
+        <label class="hidden">Username</label>
+        <input type="text" name="username" placeholder="Username" >
+        <label class="hidden">Password</label>
+        <input type="text" name="password" placeholder="Password" >
+        <label class="hidden">Organization</label>
+        <input type="text" name="organization" placeholder="Organization" >
+        <form method="GET" action="/passwords" >
+          <button type="submit">Register</button>
+        </form>
+
+      </form>
+    </article>
+  </main>
+  <!-- END OF MAIN -->
+</body>
+
+</html>
+
