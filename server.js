@@ -39,6 +39,7 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const passwordsRoutes = require("./routes/passwords-router");
 const newPasswordRoutes = require("./routes/new_password-router");
+const registerRoutes = require("./routes/register-router");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -46,6 +47,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/passwords", passwordsRoutes(db));
 // app.use("/api/new_password", newPasswordRoutes());
+// app.use("/api/register", registerRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
