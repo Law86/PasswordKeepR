@@ -7,6 +7,11 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const cookieSession = require("cookie-session");
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -48,7 +53,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("api/passwords", passwordsRoutes(db));
 app.use("/new_password", newPasswordRoutes);
-app.use("/login", loginRoutes);
+app.use("/api/login", loginRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
