@@ -10,8 +10,6 @@
   // }
 // });
 
-console.log('I\'m working!');
-
 $(() => {
 
 
@@ -24,25 +22,25 @@ const escape = function(str) {
 
 // returns a generated password based on user criteria
 const handleGeneratePassword = () => {
-  const keys = {
+  const options = {
     uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lowercase: 'abcdefghijklmnopqrstuvwxyz',
     number: '0123456789',
     symbol: '!@#$%^&*()_+~\`|}{[]:;?><,./-='
   }
 
-  const getKey = [
+  const getOption = [
     function uppercase() {
-      return keys.uppercase[Math.floor(Math.random() * keys.uppercase.length)];
+      return options.uppercase[Math.floor(Math.random() * options.uppercase.length)];
     },
     function lowercase() {
-      return keys.lowercase[Math.floor(Math.random() * keys.lowercase.length)];
+      return options.lowercase[Math.floor(Math.random() * options.lowercase.length)];
     },
     function number() {
-      return keys.number[Math.floor(Math.random() * keys.number.length)];
+      return options.number[Math.floor(Math.random() * options.number.length)];
     },
     function symbol() {
-      return keys.symbol[Math.floor(Math.random() * keys.symbol.length)];
+      return options.symbol[Math.floor(Math.random() * options.symbol.length)];
     }
   ];
 
@@ -60,7 +58,7 @@ const handleGeneratePassword = () => {
   let password = '';
 
   while (length.value > password.length) {
-    let keyToAdd = getKey[Math.floor(Math.random() * getKey.length)];
+    let keyToAdd = getOption[Math.floor(Math.random() * getOption.length)];
     let isChecked = document.getElementById(keyToAdd.name).checked;
 
     if (isChecked) {
