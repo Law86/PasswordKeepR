@@ -38,7 +38,7 @@ const passwordsRoutes = require("./routes/passwords-router");
 const renderRoutes = require("./routes/renderRoutes");
 
 // Mount all resource routes
-app.use("/api/passwords", passwordsRoutes(db));
+app.use("/passwords", passwordsRoutes(db));
 app.use("/", renderRoutes);
 
 
