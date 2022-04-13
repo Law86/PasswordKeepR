@@ -46,7 +46,7 @@ module.exports = (db) => {
     }
 
     const user_id = 1; // remove when cookie sessions ok
-    // uncomment when cookie session implemented
+    // TODO uncomment when cookie session implemented
     // const { user_id } = req.session;
 
     db.query(`INSERT INTO passwords (
@@ -65,7 +65,7 @@ module.exports = (db) => {
     `, [user_id, category_id, password, website, username])
       .then(data => {
         const password = data.rows[0];
-        res.json({ message: 'password created', password });
+        return res.render("passwords", { password });
       })
       .catch(err => {
         res
