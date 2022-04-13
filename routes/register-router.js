@@ -1,31 +1,32 @@
 const express = require("express");
 const router = express.Router();
 
-// HELPERS TO MAKE
-// Add user to database
-
-const createUser = (db, userInfo) => {
-  const { id, email, password } = userInfo;
-
-  if (!email || !password) {
-    return { error: "400 Bad Request - Invalid credentials!", data: null };
-  }
-
-  const users = Object.values(userDatabase);
-  const userFound = users.find((user) => user.email === email);
-
-  if (userFound) {
-    return { error: "400 Bad Request - User Already Exists!", data: null };
-  }
-
-  const newUser = { id, email, password };
-  userDatabase[id] = newUser;
-  return { error: null, data: newUser };
-};
-
 // GET route /register
 router.get("/register", (req, res) => {
   res.render("register");
+});
+
+// POST route /register
+router.post("/register", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const org = req.body.organization;
+  const userParams = [username, password, org];
+
+  const query = `INSERT INTO users (username, password, org)
+    VALUES ($1, $2, $3)
+    RETURNING *
+    `;
+  return db
+    .query(query, userParams)
+    .then((data) => {
+      const loggedUser = data.rows[0];
+      req.session.user_id = user.id;
+      res.redirect("/passwords");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;

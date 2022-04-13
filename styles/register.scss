@@ -10,7 +10,7 @@ main {
   border-radius: 25px;
   padding: 1.75rem;
 
-  .new-password__form {
+  .register__form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -39,7 +39,7 @@ main {
       border-radius: 25px;
       border: none;
       outline: none;
-      padding: .5rem;
+      padding: 0.5rem;
       width: 15rem;
     }
 
@@ -50,13 +50,11 @@ main {
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      padding: .5rem;
+      padding: 0.5rem;
       margin: 1rem;
 
-
-      #new-password {
-
-      }
+      // #new-password {
+      // }
 
       .slidecontainer {
         display: flex;
@@ -66,11 +64,9 @@ main {
         width: 50%;
 
         .slider {
-
           :hover {
             opacity: 1;
           }
-
         }
         #password-range {
           width: 10rem;
@@ -84,16 +80,13 @@ main {
           margin: 0;
           text-align: center;
         }
-    }
-
+      }
     }
   }
 }
 
-
 main:hover {
-
-  box-shadow: 10px 9px 13px -7px rgba(0,0,0,0.47);
-  -webkit-box-shadow: 10px 9px 13px -7px rgba(0,0,0,0.47);
-  -moz-box-shadow: 10px 9px 13px -7px rgba(0,0,0,0.47);
+  box-shadow: 10px 9px 13px -7px rgba(0, 0, 0, 0.47);
+  -webkit-box-shadow: 10px 9px 13px -7px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 10px 9px 13px -7px rgba(0, 0, 0, 0.47);
 }
