@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieSession = require("cookie-session");
 const router = express.Router();
 
 // GET route /register
@@ -21,7 +22,8 @@ router.post("/register", (req, res) => {
     .query(query, userParams)
     .then((data) => {
       const loggedUser = data.rows[0];
-      req.session.user_id = user.id;
+      console.log("************************", loggedUser);
+      // req.session.user_id = user.id;
       res.redirect("/passwords");
     })
     .catch((err) => {
