@@ -1,7 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-// add gets for other routes to render
+// -- TODO -- uncomment when code is merged
+// router.get("/", (req, res) => {
+//   res.redirect("login");
+// });
+
+// router.get("/login", (req, res) => {
+//   res.render("login");
+// });
+
+// router.get("/register", (req, res) => {
+//   res.render("register");
+// });
 
 // GET route /new_password
 router.get("/new_password", (req, res) => {
