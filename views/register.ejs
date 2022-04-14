@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <title>LockD-Register</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/register.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/register.js"></script>
+</head>
+
+<body>
+
+  <%- include('partials/_header') %>
+
+  <!-- START OF MAIN -->
+  <main>
+    <h2>Register a New Account</h2>
+    <article class="register__container"> 
+      <form method="POST" action="/api/users/register" class="register__form">
+        <label class="hidden">Username</label>
+        <input type="text" name="username" placeholder="Username" >
+        <label class="hidden">Password</label>
+        <input type="password" name="password" placeholder="Password" >
+        <label class="hidden">Organization</label>
+        <input type="text" name="organization" placeholder="Organization" >
+          <button type="submit">Register</button>
+      </form>
+    </article>
+  </main>
+  <!-- END OF MAIN -->
+</body>
+
+</html>
+

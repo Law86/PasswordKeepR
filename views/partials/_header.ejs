@@ -1,4 +1,31 @@
 <nav class="nav">
   <h1 class="nav--logo">LockD</h1>
   <i class="fa-solid fa-lock"></i>
+  <div class = "login_register">
+      <a class="button" href="#">Log in</a>
+      <a class="button" href="/api/users/register">Register</a>
+
+  </div>
+
+<!-- CLIPBOARD FUNCTION TO BE MOVED TO PASSWORDS -->
+<div class="button">
+<input type="text" id="myInput">
+<button onclick="myFunction()">Copy to Clipboard</button>
+
+<script>
+function myFunction() {
+
+const copyText = document.getElementById("myInput");
+
+copyText.select();
+copyText.setSelectionRange(0, 99999);
+
+navigator.clipboard.writeText(copyText.value);
+
+alert("Copied the text: " + copyText.value);
+}
+
+</script>
+</div>
+<!-- END OF CLIPBOARD FUNCTION -->
 </nav>
