@@ -21,7 +21,7 @@ router.get("/new_password", (req, res) => {
 
 // POST route /passwords
 router.get("/passwords", (req, res) => {
-  res.render("passwords", { password: null });
+  res.render("passwords");
 });
 
 module.exports = router;
