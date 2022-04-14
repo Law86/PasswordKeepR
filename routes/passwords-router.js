@@ -38,9 +38,9 @@ module.exports = (db) => {
       category_id = 7;
     }
 
-    const user_id = 1; // remove when cookie sessions ok
+    // const user_id = 1; // remove when cookie sessions ok
     // TODO uncomment when cookie session implemented
-    // const { user_id } = req.session;
+    const { user_id } = req.session;
 
     db.query(`INSERT INTO passwords (
       user_id,
@@ -68,8 +68,8 @@ module.exports = (db) => {
 
   // read all - GET
   router.get("/", (req, res) => {
-    // const { user_id } = req.session;
-    const user_id = 1;
+    const { user_id } = req.session;
+    // const user_id = 1;
 
     db.query(`
       SELECT  website,
