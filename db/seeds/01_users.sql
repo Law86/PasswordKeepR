@@ -1,5 +1,5 @@
 -- Users table seeds here (Example)
-INSERT INTO users (id, name, email, user_password)
-VALUES (1, 'Alice', 'alice@pleasework.com', 'itbetter');
-INSERT INTO users (id, name, email, user_password)
-VALUES (2, 'Jake', 'Jake@pleasework.com', 'itbetterbe');
+INSERT INTO users (id, name, password, org)
+VALUES (1, 'Alice', 'itbetter', "Instagram");
+INSERT INTO users (id, name, password, org)
+VALUES (2, 'Jake', 'itbetterbe', "facebook");
