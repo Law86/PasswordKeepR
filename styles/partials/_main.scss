@@ -1,0 +1,45 @@
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: $gutter * 8;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  border: 3px solid $indigo;
+  border-radius: 25px;
+  padding: $gutter;
+
+}
+
+.header,
+form {
+  margin: $gutter;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: $grey;
+
+  button {
+    padding: $gutter;
+    border: 1px solid $indigo;
+    border-radius: 25px;
+    background-color: $indigo;
+    color: $grey;
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: $gutter;
+    font-weight: 500;
+  }
+
+  select {
+    background-color: $indigo;
+    color: $grey;
+  }
+
+}
+

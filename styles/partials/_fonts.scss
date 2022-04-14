@@ -1,0 +1,32 @@
+// Font Variables
+$logo: 'Corben', cursive;
+$heading: 'Play', sans-serif;
+$body-font: 'Red Hat Mono', monospace;
+
+html {
+  font-family: $body-font;
+  font-size: 1rem;
+  color: $indigo;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: $logo;
+  font-size: 2.441rem;
+  color: $lightblue;
+}
+
+h2 {
+  font-family: $heading;
+  font-size: 1.93rem;
+}
+
+h3 {
+  font-family: $heading;
+  font-size: 1.563rem;
+}
+
+i {
+  font-size: 1.25rem;
+  color: $grey;
+}
