@@ -68,6 +68,9 @@ module.exports = (db) => {
 
   // read all - GET
   router.get("/", (req, res) => {
+    // const { user_id } = req.session;
+    const user_id = 1;
+
     db.query(`
       SELECT  website,
               username,
@@ -75,7 +78,7 @@ module.exports = (db) => {
               categories.category as category
         FROM categories
         JOIN passwords ON categories.id = category_id
-        WHERE user_id = 1;`)
+        WHERE user_id = $1;`, [user_id])
       .then(data => {
         const passwords = data.rows;
 
