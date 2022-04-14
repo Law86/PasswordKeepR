@@ -64,8 +64,7 @@ module.exports = (db) => {
     ) RETURNING *
     `, [user_id, category_id, password, website, username])
       .then(data => {
-        const password = data.rows[0];
-        return res.render("passwords", { password });
+        return res.redirect("passwords");
       })
       .catch(err => {
         res
@@ -76,10 +75,18 @@ module.exports = (db) => {
 
   // read all - GET
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM passwords;`)
+    db.query(`
+      SELECT  website,
+              username,
+              password,
+              categories.category as category
+        FROM categories
+        JOIN passwords ON categories.id = category_id
+        WHERE user_id = 1;`)
       .then(data => {
         const passwords = data.rows;
-        res.json({ passwords });
+
+        res.render('passwords', { passwords });
       })
       .catch(err => {
         res
