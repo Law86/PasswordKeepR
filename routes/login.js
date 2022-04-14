@@ -19,14 +19,16 @@ module.exports = (db) => {
         if (user.name !== name) {
           return res.send("<h3>Email not found, Please regesiter</h3>");
         }
+        console.log(password , user.password, user);
         if (user.password !== password) {
           return res.send("<h3>Wrong password, please type in correct password</h3>");
         }
         if (user.org !== org) {
           return res.send("<h3>Organistaion not registered or yout not part of the organisation</h3>");
         }
-        user = req.session.user;
-        return res.redirect("/passwords");
+        //user = req.session.user;
+        //return res.send("you login!");
+        return res.redirect("/");
       })
       .catch((error) => {
         return null;
