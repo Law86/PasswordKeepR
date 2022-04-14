@@ -22,13 +22,13 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   cookieSession({
     name: "session",
     keys: ["key1"],
   })
 );
-
 app.use(
   "/styles",
   sassMiddleware({
