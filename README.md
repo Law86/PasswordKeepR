@@ -67,5 +67,5 @@ npm i
 
 ### Screenshots
 
-!["Registration"](https://github.com/Law86/tweeter/blob/master/docs/mobile-shot.png)
-!["Creating New Password"](https://github.com/Law86/tweeter/blob/master/docs/tweet-shot.png)
+!["Registration"](https://github.com/Law86/PasswordKeepR/blob/master/public/images/register-gif.gif)
+!["Creating New Password"](https://github.com/Law86/PasswordKeepR/blob/master/public/images/newpass-gif.gif)
