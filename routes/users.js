@@ -7,7 +7,7 @@
 
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -37,35 +37,36 @@ module.exports = (db) => {
     VALUES ($1)
     RETURNING *
     `;
-    db 
-      .query(query2, [org])
+    db.query(query2, [org])
       .then((data) => {
         if (data.rows.length === 0) {
-          db.query(query3, [org]).then((response) => {
-            db.query(query, [username, hashedPass, response.rows[0].id]).then(
-              (data) => {
-                const loggedUser = data.rows[0];
-                console.log("New User Added:", loggedUser.id);
-                req.session.user_id = loggedUser.id;
-                res.redirect("/passwords");
-              }
-            ).catch((err) => {
+          db.query(query3, [org])
+            .then((response) => {
+              db.query(query, [username, hashedPass, response.rows[0].id])
+                .then((data) => {
+                  const loggedUser = data.rows[0];
+                  console.log("New User Added:", loggedUser.id);
+                  req.session.user_id = loggedUser.id;
+                  res.redirect("/passwords");
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            })
+            .catch((err) => {
               console.log(err);
             });
-          }).catch((err) => {
-            console.log(err);
-          });
         } else {
-          db.query(query, [username, hashedPass, data.rows[0].id]).then(
-            (data) => {
+          db.query(query, [username, hashedPass, data.rows[0].id])
+            .then((data) => {
               const loggedUser = data.rows[0];
               console.log("New User Added:", loggedUser.id);
               req.session.user_id = loggedUser.id;
               res.redirect("/passwords");
-            }
-          ).catch((err) => {
-            console.log(err);
-          });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }
       })
       .catch((err) => {
