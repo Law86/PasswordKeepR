@@ -53,35 +53,18 @@ main {
       padding: 0.5rem;
       margin: 1rem;
 
-      // #new-password {
-      // }
-
-      .slidecontainer {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-
-        .slider {
-          :hover {
-            opacity: 1;
-          }
-        }
-        #password-range {
-          width: 10rem;
-        }
-        #value {
-          border: none;
-          outline: none;
-          background: none;
-          width: 4rem;
-          padding: 0;
-          margin: 0;
-          text-align: center;
-        }
+      #password-range {
+        width: 10rem;
+      }
+      #value {
+        border: none;
+        outline: none;
+        background: none;
+        width: 4rem;
+        padding: 0;
+        margin: 0;
+        text-align: center;
       }
     }
   }
 }
-
