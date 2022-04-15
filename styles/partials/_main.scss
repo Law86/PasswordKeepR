@@ -13,6 +13,16 @@ main {
 
 }
 
+.hidden {
+  display: none;
+}
+
+input[type="text"], input[type="password"] {
+  margin: $gutter;
+  padding: $gutter;
+  border-radius: 25px;
+}
+
 .header,
 form {
   margin: $gutter;
@@ -29,6 +39,7 @@ form {
     background-color: $indigo;
     color: $grey;
     font-weight: 500;
+    margin-bottom: $gutter;
   }
 
   p {
