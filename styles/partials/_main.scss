@@ -22,7 +22,7 @@ form {
   align-items: center;
   background-color: $grey;
 
-  button {
+  button, input[type="submit"] {
     padding: $gutter;
     border: 1px solid $indigo;
     border-radius: 25px;
