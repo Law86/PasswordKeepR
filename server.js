@@ -8,7 +8,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2']
@@ -51,33 +51,24 @@ app.use(express.static("public"));
 const passwordsRoutes = require("./routes/passwords-router");
 const renderRoutes = require("./routes/renderRoutes");
 const registerRoutes = require("./routes/users");
+const loginRoutes = require("./routes/login");
 
 // Mount all resource routes
-app.use("/passwords", passwordsRoutes(db));
-app.use("/", renderRoutes);
-app.use("/login", loginRoutes(db));
-const newPasswordRoutes = require("./routes/new_password-router");
-const loginRoutes = require("./routes/login");
+// app.use("/passwords", passwordsRoutes(db));
+// app.use("/", renderRoutes);
+// app.use("/login", loginRoutes(db));
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-app.use("api/passwords", passwordsRoutes(db));
-app.use("/new_password", newPasswordRoutes);
 app.use("/passwords", passwordsRoutes(db));
+app.use("/new_password", newPasswordRoutes);
 app.use("/", renderRoutes);
+app.use('/users/register', registerRoutes(db));
 app.use("/login", loginRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
-app.get("/", (req, res) => {
-  res.render("passwords");
-});
-app.use('/users/register', registerRoutes(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
