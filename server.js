@@ -50,6 +50,7 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 const passwordsRoutes = require("./routes/passwords-router");
 const renderRoutes = require("./routes/renderRoutes");
+const registerRoutes = require("./routes/users");
 
 // Mount all resource routes
 app.use("/passwords", passwordsRoutes(db));
@@ -76,6 +77,7 @@ app.use("/login", loginRoutes(db));
 app.get("/", (req, res) => {
   res.render("passwords");
 });
+app.use('/users/register', registerRoutes(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

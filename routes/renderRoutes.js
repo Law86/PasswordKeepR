@@ -1,25 +1,27 @@
 const express = require("express");
 const router = express.Router();
 
-// -- TODO -- uncomment when code is merged
-// router.get("/", (req, res) => {
-//   res.redirect("login");
-// });
+// GET /
+router.get("/", (req, res) => {
+  res.redirect("login");
+});
 
-// router.get("/login", (req, res) => {
-//   res.render("login");
-// });
+// GET /login
+router.get("/login", (req, res) => {
+  res.render("login");
+});
 
-// router.get("/register", (req, res) => {
-//   res.render("register");
-// });
+// GET /register
+router.get("/register", (req, res) => {
+  res.render("register");
+});
 
-// GET route /new_password
+// GET /new_password
 router.get("/new_password", (req, res) => {
   res.render("new_password");
 });
 
-// POST route /passwords
+// GET /passwords
 router.get("/passwords", (req, res) => {
   res.render("passwords");
 });

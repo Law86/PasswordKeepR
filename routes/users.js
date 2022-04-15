@@ -21,13 +21,8 @@ module.exports = (db) => {
       });
   });
 
-  // All register routes
-  router.get("/register", (req, res) => {
-    res.render("register");
-  });
-
   // POST route /register
-  router.post("/register", (req, res) => {
+  router.post("/", (req, res) => {
     const username = req.body.username;
     const hashedPass = bcrypt.hashSync(req.body.password, 10);
     const org = req.body.organization;
@@ -42,7 +37,7 @@ module.exports = (db) => {
     VALUES ($1)
     RETURNING *
     `;
-    return db
+    db 
       .query(query2, [org])
       .then((data) => {
         if (data.rows.length === 0) {
@@ -54,7 +49,11 @@ module.exports = (db) => {
                 req.session.user_id = loggedUser.id;
                 res.redirect("/passwords");
               }
-            );
+            ).catch((err) => {
+              console.log(err);
+            });
+          }).catch((err) => {
+            console.log(err);
           });
         } else {
           db.query(query, [username, hashedPass, data.rows[0].id]).then(
@@ -64,7 +63,9 @@ module.exports = (db) => {
               req.session.user_id = loggedUser.id;
               res.redirect("/passwords");
             }
-          );
+          ).catch((err) => {
+            console.log(err);
+          });
         }
       })
       .catch((err) => {

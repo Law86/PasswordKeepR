@@ -1,0 +1,26 @@
+nav {
+  background-color: $indigo;
+  position: fixed;
+  top: 0;
+  padding: 1.5em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $gutter * 6;
+
+  i {
+    font-size: 2.441rem;
+    margin-left: $gutter;
+  }
+
+  .login_register,
+  a {
+    color: $lightblue;
+    font-family: $heading;
+    font-size: 1.563rem;
+    margin-left: $gutter * 4;
+  }
+}
+
+
