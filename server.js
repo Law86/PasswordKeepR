@@ -36,9 +36,11 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 const passwordsRoutes = require("./routes/passwords-router");
 const renderRoutes = require("./routes/renderRoutes");
+//const editPasswords = require("./routes/edit_password")
 
 // Mount all resource routes
 app.use("/passwords", passwordsRoutes(db));
+//app.use("/passwords", editPasswords(db));
 app.use("/", renderRoutes);
 
 

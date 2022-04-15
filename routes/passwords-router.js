@@ -47,7 +47,7 @@ module.exports = (db) => {
 
     const user_id = 1; // remove when cookie sessions ok
     // TODO uncomment when cookie session implemented
-    // const { user_id } = req.session;
+    //const { user_id } = req.session;
 
     db.query(`INSERT INTO passwords (
       user_id,
@@ -72,11 +72,18 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
+  //edit passwords router to update sql database
+  router.post("/edit-passwords" , (req,res) => {
+    const { user_id } = req.session;
+    console.log(req.body.password);
+    db.query(`UPDATE passwords SET password = $1 WHERE id = $2;`, [req.body.password, user_id]);
+    res.redirect("/passwords");
+  });
   // read all - GET
   router.get("/", (req, res) => {
     db.query(`
-      SELECT  website,
+      SELECT  passwords.id AS id,
+              website,
               username,
               password,
               categories.category as category

@@ -1,4 +1,6 @@
-SELECT  website,
+SELECT
+        id,
+        website,
         username,
         password,
         categories.category as category
