@@ -8,11 +8,6 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
-const bcrypt = require('bcryptjs');
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}));
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -44,7 +39,6 @@ app.use(
   })
 );
 
-
 app.use(express.static("public"));
 
 // Separated Routes for each Resource
@@ -54,21 +48,10 @@ const registerRoutes = require("./routes/users");
 const loginRoutes = require("./routes/login");
 
 // Mount all resource routes
-// app.use("/passwords", passwordsRoutes(db));
-// app.use("/", renderRoutes);
-// app.use("/login", loginRoutes(db));
-
-
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
 app.use("/passwords", passwordsRoutes(db));
-app.use("/new_password", newPasswordRoutes);
 app.use("/", renderRoutes);
 app.use('/users/register', registerRoutes(db));
 app.use("/login", loginRoutes(db));
-// Note: mount other resources here, using the same pattern above
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
